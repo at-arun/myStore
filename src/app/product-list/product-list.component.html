@@ -1,0 +1,28 @@
+<div class="p-2 text-2xl text-center font-medium text-black">Products</div>
+
+<div class="grid grid-cols-3 gap-1">
+	<div class="col-start-2">
+		<div class="p-2 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 mb-1 rounded-md" *ngFor="let product of products">
+			<span>
+				<a class="text-lg font-medium"
+					[title]="product.name+' details'"
+					[routerLink] = "['/products', product.id]">
+					{{product.name}}
+				</a>
+			</span>
+
+			<p *ngIf="product.description">
+				{{product.description}}
+			</p>
+
+			<span>
+				<button type="button" (click)="share()"
+					class="shadow bg-indigo-600 hover:bg-indigo-600 focus:shadow-outline focus:outline-none text-white py-1 px-2 rounded"
+					>Share
+				</button>   
+
+				<app-product-alert [mobile]="product" (notify)="onNotify()"></app-product-alert>
+			</span>
+		</div>
+	</div>
+</div>

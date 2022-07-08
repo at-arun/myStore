@@ -1,0 +1,5 @@
+<div class="p-2 text-2xl text-center font-medium text-black">Shipping prices</div>
+
+<div class="p-2" *ngFor="let shippingPrice of shippingPrices | async">
+	{{shippingPrice.type}} {{shippingPrice.price}}
+</div>

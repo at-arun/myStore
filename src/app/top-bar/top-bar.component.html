@@ -1,0 +1,17 @@
+<div class="grid grid-cols-12 gap-2 p-2 bg-blue-500 rounded-sm shadow-lg font-serif">
+
+	<div class="col-span-10 text-white text-2xl">
+		<a routerLink="/">{{appTitle}}</a>
+	</div>
+
+	<div class="col-span-2 text-white">
+		<button (click)="showCart()" type="button" class="w-38 float-right py-2 px-1 rounded-lg bg-amber-600">
+			Checkout
+			<span class="px-1 ml-2 content-between align-middle float-right font-bold bg-green-600 rounded-md" *ngIf="cartCount">
+			 {{cartCount}}
+			</span>
+		</button>
+
+	</div>
+</div>
+

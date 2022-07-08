@@ -1,0 +1,14 @@
+<div class="p-2 text-2xl text-center font-medium text-black">Product Details</div>
+
+<div class="grid grid-cols-3 gap-1">
+	<div class="col-start-2" *ngIf="product">
+		<div class="p-2 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 mb-1 rounded-md">
+			<div class="text-xl">{{product.name}}</div>
+			<div>{{product.price | currency}}</div>
+			<div>{{product.description}}</div>
+			<button type="button" (click)="addToCart(product)"
+					class="shadow bg-indigo-700 hover:bg-indigo-800 focus:shadow-outline focus:outline-none text-white py-1 px-2 mt-2 rounded" >Buy</button>
+		</div>
+	</div>
+</div>
+
